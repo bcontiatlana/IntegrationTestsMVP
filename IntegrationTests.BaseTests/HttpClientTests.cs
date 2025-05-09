@@ -17,7 +17,7 @@ public abstract class HttpClientTests(string endpoint = null) : HttpClientBaseTe
     }
 
     [Trait("Feature", "Normalization")]
-    [SkipForConnectorsTheory("Akamai")]
+    [SkipForConnectorsTheory("NetCore")]
     [InlineData("/api/basket/add?id=12345", "should match trigger with normal normalized url")]
     [InlineData("/./api/basket/add?id=12345", "should ignore /./ path segment from url")]
     [InlineData("/api/fake/../basket/add?id=12345", "should remove /../ path segment from url and remove previous segment")]
