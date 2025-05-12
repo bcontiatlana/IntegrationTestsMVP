@@ -5,7 +5,7 @@ using Xunit.Sdk;
 
 namespace IntegrationTests.Base;
 
-public abstract class BrowserTests(string endpoint = null) : BrowserBaseTest(endpoint)
+public abstract partial class BrowserTests(string endpoint = null) : BrowserBaseTest(endpoint)
 {
     [Trait("Feature", "Normalization")]
     [SkipForConnectorsFact("Akamai")]

@@ -7,14 +7,11 @@ using Xunit.Sdk;
 
 namespace IntegrationTests.Base;
 
-public abstract class HttpClientTests(string endpoint = null) : HttpClientBaseTest(endpoint)
+/// <summary>
+/// Tests class for testing HttpClient calls.
+/// </summary>
+public abstract partial class HttpClientTests(string endpoint = null) : HttpClientBaseTest(endpoint)
 {
-    [SkipForConnectorsFact("Akamai")]
-    [Trait("Feature", "Normalization")]
-    public void TestMethod()
-    {
-        Assert.True(true);
-    }
 
     [Trait("Feature", "Normalization")]
     [SkipForConnectorsTheory("NetCore")]
