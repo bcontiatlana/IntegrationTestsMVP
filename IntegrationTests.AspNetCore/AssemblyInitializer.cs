@@ -1,14 +1,13 @@
 using System;
-using Xunit.Abstractions;
-using Xunit.Sdk;
+using Xunit.v3;
 
-[assembly: Xunit.TestFramework("IntegrationTests.AspNetCore.AssemblyInitializer", "IntegrationTests.AspNetCore")]
+[assembly: Xunit.TestFramework(typeof(IntegrationTests.AspNetCore.AssemblyInitializer))]
 
 namespace IntegrationTests.AspNetCore
 {
     public class AssemblyInitializer : XunitTestFramework
     {
-        public AssemblyInitializer(IMessageSink messageSink) : base(messageSink)
+        public AssemblyInitializer()
         {
             // Set environment variables for connector configuration
             Environment.SetEnvironmentVariable("CURRENT_CONNECTOR_TYPE", "AspNetCore");
